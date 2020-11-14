@@ -1,0 +1,28 @@
+{
+  "fitbit": {
+    "appUUID": "4625e37c-292e-4e58-a337-2ac8bd2c4d77",
+    "appType": "app",
+    "appDisplayName": "Simple Widget Demo",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#607d8b",
+    "requestedPermissions": ["access_heart_rate"],
+    "buildTargets": [
+      "atlas",
+      "vulcan"
+    ],
+    "i18n": {
+      "en": {
+        "name": "Simple Widget Demo"
+      }
+    },
+    "defaultLanguage": "en-US"
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "~5.0.0",
+    "@fitbit/sdk-cli": "^1.7.3"
+  },
+  "scripts": {
+    "build": "fitbit-build",
+    "debug": "fitbit"
+  }
+}

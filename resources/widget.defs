@@ -1,0 +1,10 @@
+<svg>
+  <defs>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="import" href="/mnt/sysassets/system_widget.defs" />
+    <!-- Import widget styles and elements -->
+    <link rel="import" href="simple-bar/index.view" />
+    <link rel="import" href="rounded-rect/index.view" />
+    <link rel="import" href="rounded-rect-wrapped/index.view" />
+  </defs>
+</svg>

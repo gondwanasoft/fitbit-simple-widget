@@ -1,0 +1,11 @@
+<svg>
+  <use id="energyGauge" href="#simpleBar" x="24" y="100" width="80" height="80" fill="green" >
+    <set href="#simpleBarText" attributeName="fill" to="yellow" />
+    <set href="#simpleBarRects/simpleBarMask/simpleBarMaskImage" attributeName="href" to="testmask.png" />
+  </use>
+  <use id="stepsGauge" href="#simpleBar" x="128" y="100" width="80" height="80" fill="blue" />
+  <use id="heartGauge" href="#simpleBar" x="232" y="100" width="80" height="80" fill="red" />
+
+  <use id="roundedRect1" href="#roundedRect" x="100" width="100" y="200" height="20" fill="blue" />
+  <use id="roundedRectWrapped" href="#roundedRectWrapped" x="20" width="100" y="250" height="20" fill="green" />
+</svg>

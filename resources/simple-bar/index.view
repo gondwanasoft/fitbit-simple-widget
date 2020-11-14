@@ -1,0 +1,14 @@
+<defs>
+  <mask id="simpleBarMask">
+    <!--<circle id="maskcir" cx="40" cy="40" r="40" />-->
+    <image id="simpleBarMaskImage" href="energy-mask.png" />
+  </mask>
+
+  <symbol id="simpleBar" class="simpleBar">
+    <svg id="simpleBarRects" mask="#simpleBarMask">
+      <rect fill="#303030" width="100%" height="100%" />                <!-- background -->
+      <rect id="simpleBarValRect" width="100%" height="0" y="50%" />    <!-- value -->
+    </svg>
+    <text id="simpleBarText" x="50%" y="50%+9" fill="white" font-size="28" text-anchor="middle" text-length="8" />
+  </symbol>
+</defs>
