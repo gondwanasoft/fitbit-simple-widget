@@ -44,6 +44,16 @@ const construct = el => {
     }
   })
 
+  // The following property demonstrates how to provide simple access to elements within a widget.
+  // In general, this is a dangerous practice because calling code can break the behaviour of the widget by manipulating its elements independently.
+  // This feature might be useful where calling code might require more flexible control of elements within a widget than is otherwise provided by the
+  // widget's API.
+  Object.defineProperty(el, 'text', {
+    get: function() {
+      return _text
+    }
+  })
+
   el.redraw = () => {
     // Must be called after changing height in .js.
     // Alternatives:

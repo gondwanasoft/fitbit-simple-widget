@@ -27,9 +27,12 @@ console.log(`got energyGauge=${energyGauge}`)
 const stepsGauge = widgets.getWidgetById('stepsGauge')
 stepsGauge.maxValue = 50
 stepsGauge.decimals = 2
+stepsGauge.text.style.fontSize = 10
 console.log(`stepsGauge=${stepsGauge}`)
 //const heartGauge = simpleBar({id:'heartGauge'})
 const heartGauge = widgets.getWidgetById('heartGauge')
+
+//roundedRect1El.style.opacity = 0.3  // TODO 3 opacity is problematic
 
 // The following (and other) property assignments work because the widget is a SVG element, and thus inherits members from that element even though they're not included in the widget definition:
 stepsGauge.style.fill = 'brown'

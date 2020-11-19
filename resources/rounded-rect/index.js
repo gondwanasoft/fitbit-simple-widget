@@ -1,3 +1,14 @@
+/*
+This is a dumb widget. It has no awareness of maximum value or current level of achievement.
+Its size is determined only by its width and height in pixels. It is the responsibility of calling code to determine the appropriate size.
+
+The widget could be made smarter by giving it awareness of the maximum value it should be able to represent, and the current value it should indicate.
+The widget's .width would then specify its size when its current value was at maximum. Lesser values would result in narrower visible image,
+although the widget's .width would remain unchanged.
+
+This example has been deliberately kept simple to demonstrate how to create a widget that is basically just a collection of SVG elements.
+*/
+
 import widgetFactory from '../widget-factory'
 
 console.log('rounded-rect index.js running')
@@ -42,5 +53,4 @@ export default () => {
   }
 }
 
-// TODO 3 expose internal elements via API (risky); see NiVZ's supeerb
 // TODO 3 try rotating a widget

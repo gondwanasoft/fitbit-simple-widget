@@ -9,7 +9,6 @@ const construct = el => {
 
     const isValidNew = el.width >= el.height  // to be valid, we must at least be able to draw a circle
     if (isValidNew !== isValid) {
-      console.log(`wrapped isValid=${isValidNew}`)
       isValid = isValidNew
       // Hide the elements if invalid:
       roundedRectLeftEl.style.visibility = roundedRectRectEl.style.visibility = roundedRectRightEl.style.visibility = isValidNew? 'inherit' : 'hidden'
@@ -59,5 +58,5 @@ export default () => {
   }
 }
 
-// TODO 3 expose internal elements via API (risky); see NiVZ's supeerb
 // TODO 3 try rotating a widget
+// TODO 3 try a widget within a widget
