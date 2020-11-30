@@ -58,5 +58,4 @@ export default () => {
   }
 }
 
-// TODO 3 try rotating a widget
-// TODO 3 try a widget within a widget
+// TODO 3.1 try a widget within a widget (smart widget with text overlay? rounded-rect bar with grey rounded-rect background?)
