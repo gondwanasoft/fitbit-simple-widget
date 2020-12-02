@@ -11,12 +11,12 @@ This example has been deliberately kept simple to demonstrate how to create a wi
 
 import widgetFactory from '../widget-factory'
 
-console.log('rounded-rect index.js running')
-console.log(`widgetFactory is ${widgetFactory}`)
-console.log('got widgets')
+//console.log('rounded-rect index.js running')
+//console.log(`widgetFactory is ${widgetFactory}`)
+//console.log('got widgets')
 
 const construct = el => {
-  console.log(`rounded-rect construct: el=${el} width=${el.width}`)
+  //console.log(`rounded-rect construct: el=${el} width=${el.width}`)
   const roundedRectLeftEl = el.getElementById('roundedRectLeft')
   const roundedRectRectEl = el.getElementById('roundedRectRect')
   const roundedRectRightEl = el.getElementById('roundedRectRight')
@@ -25,6 +25,7 @@ const construct = el => {
   el.redraw = () => {
     // redraw() must be exposed in this widget's API because changes to width won't adjust the widget's sub-elements.
 
+    //console.log(`roundedRect.redraw() ${roundedRectLeftEl.cx} ${roundedRectLeftEl.cy} ${roundedRectLeftEl.r} ${el.height}`)
     const isValidNew = el.width >= el.height  // to be valid, we must at least be able to draw a circle
     if (isValidNew !== isValid) {
       isValid = isValidNew

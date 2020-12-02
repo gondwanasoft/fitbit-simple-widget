@@ -13,4 +13,6 @@
   <g transform="translate(200,200) rotate(45)">
     <use id="roundedRectRot" href="#roundedRect" x="-50" width="100" y="-50" height="20" fill="yellow" />
   </g>
+
+  <use id="compoundRoundedRect1" href="#compoundRoundedRect" x="50%-50" width="100" y="300" height="20" fill="white" />
 </svg>

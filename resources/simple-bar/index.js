@@ -1,11 +1,11 @@
 import document from 'document'
 import widgetFactory from '../widget-factory'
 
-console.log('simple-bar index.js running')
+//console.log('simple-bar index.js running')
 
 const construct = el => {
-  console.log(`simple-bar construct: el=${el} id=${el.id}`)
-  console.trace()
+  //console.log(`simple-bar construct: el=${el} id=${el.id}`)
+  //console.trace()
 
   const _text = el.getElementById('simpleBarText')
   const _valRect = el.getElementById('simpleBarValRect')
@@ -13,7 +13,7 @@ const construct = el => {
   let _maxValue = 100
   let _decimals = 0
 
-  console.log(`before Object.defineProperty`)
+  //console.log(`before Object.defineProperty`)
   Object.defineProperty(el, 'value', {  // It may be dangerous to use the property name 'value' because it's already defined on GraphicsElement.
     get: function() {
       return _value
