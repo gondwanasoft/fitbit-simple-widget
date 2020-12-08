@@ -1,5 +1,5 @@
 import document from 'document'
-import widgetFactory from '../widget-factory'
+//import widgetFactory from '../widget-factory'
 
 //console.log('simple-bar index.js running')
 

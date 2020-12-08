@@ -15,4 +15,6 @@
   </g>
 
   <use id="compoundRoundedRect1" href="#compoundRoundedRect" x="50%-50" width="100" y="300" height="20" fill="white" />
+
+  <use id="roundedRectNoFactory1" href="#roundedRectNoFactory" x="50%-50" width="100" y="300" height="20" fill="red" />
 </svg>

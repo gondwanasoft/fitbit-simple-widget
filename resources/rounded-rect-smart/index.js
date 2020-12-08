@@ -2,7 +2,7 @@
 This is a smart widget. It has knows about maximum value and current level of achievement.
 */
 
-import widgetFactory from '../widget-factory'
+//import widgetFactory from '../widget-factory'
 
 //console.log('rounded-rect index.js running')
 //console.log(`widgetFactory is ${widgetFactory}`)

@@ -5,14 +5,10 @@
     rather than having widgets within widgets.
 */
 
-import widgetFactory from '../widget-factory'
-import roundedRect from '../rounded-rect'
-
-const construct = el => {
-  const widgets = widgetFactory([roundedRect]) // TODO 2 can this be rationalised with same object in app/index.js?
-  //const compoundRoundedRectFillEl = el.getElementById('compoundRoundedRectFill')
-  const compoundRoundedRectValWidget = widgets.getWidgetById('compoundRoundedRectVal')
-  const compoundRoundedRectFillWidget = widgets.getWidgetById('compoundRoundedRectFill')
+const construct = (el, widgetFactory) => {  // TODO 1 use of widgetFactory here is probably inconsistent; should register el as widget container, then search it
+  widgetFactory.registerContainer(el)
+  const compoundRoundedRectValWidget = el.getWidgetById('compoundRoundedRectVal', el)
+  const compoundRoundedRectFillWidget = el.getWidgetById('compoundRoundedRectFill', el)
 
   el.redraw = () => {
     // redraw() must be exposed in this widget's API because changes to width won't adjust the widget's sub-elements.
@@ -44,8 +40,6 @@ const construct = el => {
 
   return el
 }
-
-//widgetFactory().register('roundedRect', construct)
 
 export default () => {
   return {

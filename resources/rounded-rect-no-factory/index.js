@@ -1,19 +1,6 @@
 /*
-This is a dumb widget. It has no awareness of maximum value or current level of achievement.
-Its size is determined only by its width and height in pixels. It is the responsibility of calling code to determine the appropriate size.
-
-The widget could be made smarter by giving it awareness of the maximum value it should be able to represent, and the current value it should indicate.
-The widget's .width would then specify its size when its current value was at maximum. Lesser values would result in narrower visible image,
-although the widget's .width would remain unchanged.
-
-This example has been deliberately kept simple to demonstrate how to create a widget that is basically just a collection of SVG elements.
+  This is a version of rounded-rect that has been streamlined so it can be created easily without using the widget-factory.
 */
-
-//import widgetFactory from '../widget-factory'
-
-//console.log('rounded-rect index.js running')
-//console.log(`widgetFactory is ${widgetFactory}`)
-//console.log('got widgets')
 
 const construct = el => {
   //console.log(`rounded-rect construct: el=${el} width=${el.width}`)
@@ -47,9 +34,5 @@ const construct = el => {
 
 //widgetFactory().register('roundedRect', construct)
 
-export default () => {
-  return {
-    name: 'roundedRect',
-    construct: construct
-  }
-}
+export default el => {return construct(el)}
+// An alternative would be to take {id, ElementSearch} as the argument and use ElementSearch.getElementById(id) to obtain the element, then proceed as currently.

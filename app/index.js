@@ -7,36 +7,39 @@ import roundedRect from '../resources/rounded-rect'
 import roundedRectSmart from '../resources/rounded-rect-smart'
 import roundedRectWrapped from '../resources/rounded-rect-wrapped'
 import compoundRoundedRect from '../resources/compound-rounded-rect'
+import roundedRectNoFactory from '../resources/rounded-rect-no-factory'
 
 const el = document.getElementById('energyGauge')
 //console.log(`el=${el.id} ${el.class}`)
 
 //console.log(`C`)
 //console.log(`roundedRect=${roundedRect} (${typeof roundedRect})`)
-const widgets = widgetFactory([roundedRect, roundedRectSmart, roundedRectWrapped, simpleBar, compoundRoundedRect])   // args aren't actually used; referring to them just ensures they're not tree-shaken out of existence
+const widgets = widgetFactory([roundedRect, roundedRectSmart, roundedRectWrapped, simpleBar, compoundRoundedRect])
+widgets.registerContainer(document)
+const roundedRect1El = document.getWidgetById('roundedRect1')
 //console.log(`widgets=${widgets}`)
 //const widget = widgets.getWidgetById('energyGauge', document)
 //console.log(`widget=${widget}`)
-const roundedRect1El = widgets.getWidgetById('roundedRect1')
-const roundedRectRotEl = widgets.getWidgetById('roundedRectRot')
-const roundedRectSmartEl = widgets.getWidgetById('roundedRectSmart')
+//const roundedRect1El = widgets.getWidgetById('roundedRect1')
+const roundedRectRotEl = document.getWidgetById('roundedRectRot')
+const roundedRectSmartEl = document.getWidgetById('roundedRectSmart')
 roundedRectSmartEl.maxValue = 50
-const roundedRectWrappedEl = widgets.getWidgetById('roundedRectWrapped')
+const roundedRectWrappedEl = document.getWidgetById('roundedRectWrapped')
 //console.log(`roundedRect1El=${roundedRect1El} roundedRectWrappedEl=${roundedRectWrappedEl}`)
 
 //const energyGauge = simpleBar({id:'energyGauge'})
 //console.log('getting energyGauge')
-const energyGauge = widgets.getWidgetById('energyGauge')
+const energyGauge = document.getWidgetById('energyGauge')
 //console.log(`got energyGauge=${energyGauge}`)
 //const stepsGauge = simpleBar({id:'stepsGauge', maxValue:50, decimals:2})
-const stepsGauge = widgets.getWidgetById('stepsGauge')
+const stepsGauge = document.getWidgetById('stepsGauge')
 stepsGauge.maxValue = 50
 stepsGauge.decimals = 2
 stepsGauge.text.style.fontSize = 10
 //console.log(`stepsGauge=${stepsGauge}`)
 //const heartGauge = simpleBar({id:'heartGauge'})
-const heartGauge = widgets.getWidgetById('heartGauge')
-const compoundRoundedRectEl = widgets.getWidgetById('compoundRoundedRect1')
+const heartGauge = document.getWidgetById('heartGauge')
+const compoundRoundedRectEl = document.getWidgetById('compoundRoundedRect1')
 compoundRoundedRectEl.x = 68
 compoundRoundedRectEl.y = 10
 compoundRoundedRectEl.width = 200
@@ -48,6 +51,10 @@ compoundRoundedRectEl.redraw()
 // The following (and other) property assignments work because the widget is a SVG element, and thus inherits members from that element even though they're not included in the widget definition:
 stepsGauge.style.fill = 'brown'
 
+const roundedRectNoFactoryEl = document.getElementById('roundedRectNoFactory1')
+const roundedRectNoFactoryWidget = roundedRectNoFactory(roundedRectNoFactoryEl)
+// Alternatively: const roundedRectNoFactoryWidget = roundedRectNoFactory({id:'roundedRectNoFactory1'})
+
 // Detect battery level change and update immediately:
 battery.addEventListener('change', () => {
   const val = battery.chargeLevel
@@ -57,6 +64,7 @@ battery.addEventListener('change', () => {
   roundedRectWrappedEl.width = val  // no need (or ability!) to call redraw() because .width does so
   roundedRectSmartEl.value = val
   compoundRoundedRectEl.value = val
+  roundedRectNoFactoryWidget.width = val; roundedRectNoFactoryWidget.redraw()
 })
 
 const hrm = new HeartRateSensor({ frequency: 1 })

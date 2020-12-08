@@ -57,5 +57,3 @@ export default () => {
     construct: construct
   }
 }
-
-// TODO 3.1 try a widget within a widget (smart widget with text overlay? rounded-rect bar with grey rounded-rect background?)

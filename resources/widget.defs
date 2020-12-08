@@ -8,5 +8,6 @@
     <link rel="import" href="rounded-rect-smart/index.view" />
     <link rel="import" href="rounded-rect-wrapped/index.view" />
     <link rel="import" href="compound-rounded-rect/index.view" />
+    <link rel="import" href="rounded-rect-no-factory/index.view" />
   </defs>
 </svg>
