@@ -1,0 +1,12 @@
+<defs>
+  <symbol id="progressArcSmart" class="progressArcSmart" >
+    <image id="progressArcIcon" x="50%-12" y="50%-12" width="24" height="24" href="" fill="white" />
+    <text id="progressArcText" x="50%" y="100%+8"
+        font-family="Colfax-Bold" fill="white"
+        font-size="22" 
+        text-anchor="middle"
+          text-length="8"/>
+    <arc id="progressArcBg" x="0" y="0" width="100%" height="100%" start-angle="225" sweep-angle="270" arc-width="10" fill="#505050" />
+    <arc id="progressArcFg" x="0" y="0" width="100%" height="100%" start-angle="225" sweep-angle="0" arc-width="10" fill="inherit"/>
+  </symbol>
+</defs>

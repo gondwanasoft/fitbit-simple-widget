@@ -14,6 +14,11 @@
     <use id="roundedRectRot" href="#roundedRect" x="-50" width="100" y="-50" height="20" fill="yellow" />
   </g>
 
+  <use id="progressArcSmart" href="#progressArcSmart" x="25%" y="50%" width="64" height="64" fill="fb-cyan">
+    <set href="progressArcIcon" attributeName="href" to="stat_battery_solid_24px.png" />
+  </use>
+       
+  
   <use id="compoundRoundedRect1" href="#compoundRoundedRect" x="50%-50" width="100" y="300" height="20" fill="white" />
 
   <use id="roundedRectNoFactory1" href="#roundedRectNoFactory" x="50%-50" width="100" y="300" height="20" fill="red" />

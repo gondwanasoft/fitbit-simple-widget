@@ -8,13 +8,15 @@ import roundedRectSmart from '../resources/rounded-rect-smart'
 import roundedRectWrapped from '../resources/rounded-rect-wrapped'
 import compoundRoundedRect from '../resources/compound-rounded-rect'
 import roundedRectNoFactory from '../resources/rounded-rect-no-factory'
+import progressArcSmart from '../resources/progress-arc-smart';
+
 
 const el = document.getElementById('energyGauge')
 //console.log(`el=${el.id} ${el.class}`)
 
 //console.log(`C`)
 //console.log(`roundedRect=${roundedRect} (${typeof roundedRect})`)
-const widgets = widgetFactory([roundedRect, roundedRectSmart, roundedRectWrapped, simpleBar, compoundRoundedRect])
+const widgets = widgetFactory([roundedRect, roundedRectSmart, roundedRectWrapped, simpleBar, compoundRoundedRect, progressArcSmart])
 widgets.registerContainer(document)
 const roundedRect1El = document.getWidgetById('roundedRect1')
 //console.log(`widgets=${widgets}`)
@@ -51,6 +53,13 @@ compoundRoundedRectEl.redraw()
 // The following (and other) property assignments work because the widget is a SVG element, and thus inherits members from that element even though they're not included in the widget definition:
 stepsGauge.style.fill = 'brown'
 
+
+// progressArc by NiVZ
+const progressArcSmartEl = document.getWidgetById('progressArcSmart');
+progressArcSmartEl.suffix = '%';
+
+
+
 const roundedRectNoFactoryEl = document.getElementById('roundedRectNoFactory1')
 const roundedRectNoFactoryWidget = roundedRectNoFactory(roundedRectNoFactoryEl)
 // Alternatively: const roundedRectNoFactoryWidget = roundedRectNoFactory({id:'roundedRectNoFactory1'})
@@ -65,6 +74,10 @@ battery.addEventListener('change', () => {
   roundedRectSmartEl.value = val
   compoundRoundedRectEl.value = val
   roundedRectNoFactoryWidget.width = val; roundedRectNoFactoryWidget.redraw()
+  
+  
+  progressArcSmartEl.value = val;
+  
 })
 
 const hrm = new HeartRateSensor({ frequency: 1 })
