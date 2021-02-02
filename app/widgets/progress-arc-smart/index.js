@@ -14,11 +14,11 @@ const construct = el => {
 
     progressArcFg.sweepAngle = _value / 100 * 270;
     progressArcText.text = `${_value}${_suffix}`;
-    
-  
+
+
   }
-  
-  
+
+
   Object.defineProperty(el, 'value', {  // It may be dangerous to use the property name 'value' because it's already defined on GraphicsElement.
     set: function(newValue) {
       if(_value === newValue)
@@ -27,7 +27,7 @@ const construct = el => {
       el.redraw()
     }
   })
-  
+
   Object.defineProperty(el, 'suffix', {  // It may be dangerous to use the property name 'value' because it's already defined on GraphicsElement.
     set: function(newValue) {
       if(_suffix === newValue)
@@ -39,11 +39,7 @@ const construct = el => {
 
 
   el.redraw()
-
-  return el
 }
-
-//widgetFactory().register('roundedRect', construct)
 
 
 export default () => {

@@ -1,0 +1,6 @@
+<defs>
+  <symbol id="compoundRoundedRect" >
+    <use id="compoundRoundedRectFill" type="roundedRect" href="#roundedRect" width="100%" height="100%" fill="grey" />
+    <use id="compoundRoundedRectVal" type="roundedRectSmart" href="#roundedRectSmart" width="100%" height="100%" fill="white" />
+  </symbol>
+</defs>

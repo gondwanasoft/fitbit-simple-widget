@@ -5,10 +5,9 @@
     rather than having widgets within widgets.
 */
 
-const construct = (el, widgetFactory) => {  // TODO 1 use of widgetFactory here is probably inconsistent; should register el as widget container, then search it
-  widgetFactory.registerContainer(el)
-  const compoundRoundedRectValWidget = el.getWidgetById('compoundRoundedRectVal', el)
-  const compoundRoundedRectFillWidget = el.getWidgetById('compoundRoundedRectFill', el)
+const construct = (el) => {
+  const compoundRoundedRectValWidget = el.getElementById('compoundRoundedRectVal')
+  const compoundRoundedRectFillWidget = el.getElementById('compoundRoundedRectFill')
 
   el.redraw = () => {
     // redraw() must be exposed in this widget's API because changes to width won't adjust the widget's sub-elements.
@@ -37,8 +36,6 @@ const construct = (el, widgetFactory) => {  // TODO 1 use of widgetFactory here 
   })
 
   el.redraw()
-
-  return el
 }
 
 export default () => {

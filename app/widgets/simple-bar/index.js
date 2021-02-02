@@ -1,8 +1,3 @@
-import document from 'document'
-//import widgetFactory from '../widget-factory'
-
-//console.log('simple-bar index.js running')
-
 const construct = el => {
   //console.log(`simple-bar construct: el=${el} id=${el.id}`)
   //console.trace()
@@ -72,11 +67,7 @@ const construct = el => {
     _valRect.height = height
     _valRect.y = el.height - height
   }
-
-  return el
 }
-
-//widgetFactory().register('simpleBar', construct)
 
 export default () => {
   return {

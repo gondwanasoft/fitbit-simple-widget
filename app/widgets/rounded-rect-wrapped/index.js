@@ -1,18 +1,12 @@
-/*
-  This is a version of rounded-rect that has been streamlined so it can be created easily without using the widget-factory.
-*/
-
 const construct = el => {
-  //console.log(`rounded-rect construct: el=${el} width=${el.width}`)
   const roundedRectLeftEl = el.getElementById('roundedRectLeft')
   const roundedRectRectEl = el.getElementById('roundedRectRect')
   const roundedRectRightEl = el.getElementById('roundedRectRight')
   let   isValid = el.width < el.height    // opposite to what we want, so it gets handled in first redraw
 
   el.redraw = () => {
-    // redraw() must be exposed in this widget's API because changes to width won't adjust the widget's sub-elements.
+    // This is inefficient because it updates values that may not have changed.
 
-    //console.log(`roundedRect.redraw() ${roundedRectLeftEl.cx} ${roundedRectLeftEl.cy} ${roundedRectLeftEl.r} ${el.height}`)
     const isValidNew = el.width >= el.height  // to be valid, we must at least be able to draw a circle
     if (isValidNew !== isValid) {
       isValid = isValidNew
@@ -29,10 +23,35 @@ const construct = el => {
 
   el.redraw()
 
-  return el
+  const widget = {}
+
+  Object.defineProperty(widget, 'x', {  // because we're not returning an element, we have to explicitly define any element API calls we want to be available
+    get: function() {
+      return el.x
+    },
+    set: function(newValue) {
+      if(el.x === newValue)
+        return
+      el.x = newValue
+    }
+  })
+
+  Object.defineProperty(widget, 'width', {
+    get: function() {
+      return el.width
+    },
+    set: function(newValue) {
+      if(el.width === newValue)
+        return
+      el.width = newValue
+      el.redraw()
+    }
+  })
 }
 
-//widgetFactory().register('roundedRect', construct)
-
-export default el => {return construct(el)}
-// An alternative would be to take {id, ElementSearch} as the argument and use ElementSearch.getElementById(id) to obtain the element, then proceed as currently.
+export default () => {
+  return {
+    name: 'roundedRectWrapped',
+    construct: construct
+  }
+}
