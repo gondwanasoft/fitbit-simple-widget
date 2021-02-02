@@ -1,5 +1,5 @@
 <defs>
-  <symbol id="progressArcSmart" >
+  <symbol id="progressArcSmart" type="progressArcSmart" >
     <image id="progressArcIcon" x="50%-12" y="50%-12" width="24" height="24" href="" fill="white" />
     <text id="progressArcText" x="50%" y="100%+8"
         font-family="Colfax-Bold" fill="white"

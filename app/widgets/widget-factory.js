@@ -28,5 +28,3 @@ export const widgetFactory = (...args) => {
     });
   }
 }
-// TODO 3 do I need widgetRego.name?
-// TODO 3 can I use getElementsByTypeName without specifying type against <use> but against <symbol>? If so, mightn't need type= in widget <use>, and mightn't need class= in <symbol>

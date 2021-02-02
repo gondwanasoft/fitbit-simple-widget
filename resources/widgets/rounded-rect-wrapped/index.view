@@ -1,5 +1,5 @@
 <defs>
-  <symbol id="roundedRectWrapped" >
+  <symbol id="roundedRectWrapped" type="roundedRectWrapped" >
     <circle id="roundedRectLeft" r="50%" />
     <rect id="roundedRectRect" width="100%" height="100%" />
     <circle id="roundedRectRight" r="50%" />

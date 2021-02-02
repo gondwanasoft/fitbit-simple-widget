@@ -1,26 +1,26 @@
 <svg>
   <svg id="widgetGroup">
-    <use id="energyGauge" type="simpleBar" href="#simpleBar" x="24" y="100" width="80" height="80" fill="green" >
+    <use id="energyGauge" href="#simpleBar" x="24" y="100" width="80" height="80" fill="green" >
       <set href="#simpleBarText" attributeName="fill" to="yellow" />
       <set href="#simpleBarRects/simpleBarMask/simpleBarMaskImage" attributeName="href" to="testmask.png" />
     </use>
-    <use id="stepsGauge" type="simpleBar" class="simpleBarClass" href="#simpleBar" x="128" y="100" fill="blue" />
-    <use id="heartGauge" type="simpleBar" class="simpleBarClass" href="#simpleBar" x="232" y="100" fill="red" />
+    <use id="stepsGauge" class="simpleBarClass" href="#simpleBar" x="128" y="100" fill="blue" />
+    <use id="heartGauge" class="simpleBarClass" href="#simpleBar" x="232" y="100" fill="red" />
   </svg>
 
-  <use id="roundedRect1" type="roundedRect" href="#roundedRect" x="100" width="100" y="200" height="20" fill="blue" />
-  <use id="roundedRectWrapped" type="roundedRectWrapped" href="#roundedRectWrapped" x="20" width="100" y="250" height="20" fill="green" />
-  <use id="roundedRectSmart" type="roundedRectSmart" href="#roundedRectSmart" x="100%-120" width="100" y="250" height="20" fill="cyan" />
+  <use id="roundedRect1" href="#roundedRect" x="100" width="100" y="200" height="20" fill="blue" />
+  <use id="roundedRectWrapped" href="#roundedRectWrapped" x="20" width="100" y="250" height="20" fill="green" />
+  <use id="roundedRectSmart" href="#roundedRectSmart" x="100%-120" width="100" y="250" height="20" fill="cyan" />
 
   <g transform="translate(200,200) rotate(45)">
-    <use id="roundedRectRot" type="roundedRect" href="#roundedRect" x="-50" width="100" y="-50" height="20" fill="yellow" />
+    <use id="roundedRectRot" href="#roundedRect" x="-50" width="100" y="-50" height="20" fill="yellow" />
   </g>
 
-  <use id="progressArcSmart" type="progressArcSmart" href="#progressArcSmart" x="25%" y="50%" width="64" height="64" fill="fb-cyan">
+  <use id="progressArcSmart" href="#progressArcSmart" x="25%" y="50%" width="64" height="64" fill="fb-cyan">
     <set href="progressArcIcon" attributeName="href" to="stat_battery_solid_24px.png" />
   </use>
 
-  <use id="compoundRoundedRect1" type="compoundRoundedRect" href="#compoundRoundedRect" x="50%-50" width="100" y="300" height="20" fill="white" />
+  <use id="compoundRoundedRect1" href="#compoundRoundedRect" x="50%-50" width="100" y="300" height="20" fill="white" />
 
-  <use id="roundedRectNoFactory1" type="roundedRectNoFactory" href="#roundedRectNoFactory" x="50%-50" width="100" y="300" height="20" fill="red" />
+  <use id="roundedRectNoFactory1" href="#roundedRectNoFactory" x="50%-50" width="100" y="300" height="20" fill="red" />
 </svg>

@@ -11,9 +11,13 @@ import roundedRectNoFactory from './widgets/rounded-rect-no-factory'
 import progressArcSmart from './widgets/progress-arc-smart';
 
 
+const typeTestEls = document.getElementsByTypeName('typeTest');
+typeTestEls.forEach(el => {
+  console.log(`${el.id} ${el.type}`)
+});
+
 
 const el = document.getElementById('energyGauge')
-console.log(`el.type=${el.type}`)
 
 widgetFactory(roundedRect, roundedRectSmart)
 widgetFactory(roundedRectWrapped)
